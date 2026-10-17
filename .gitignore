@@ -1,0 +1,17 @@
+# Local secrets and runtime data
+.env
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Uploaded study material is user data
+uploads/*
+!uploads/.gitkeep
+
+# Local development tools
+.venv/
+venv/
+.pytest_cache/
+.coverage

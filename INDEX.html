@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=frontend/index.html">
+    <title>AI Study Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🤖</div>
+            <div>
+                <h2>StudyBuddy</h2>
+                <span>AI Learning Assistant</span>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-item active" data-section="dashboard">
+                🏠 <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-section="pdf">
+                📄 <span>Upload PDF</span>
+            </button>
+
+            <button class="nav-item" data-section="summary">
+                🧠 <span>AI Summary</span>
+            </button>
+
+            <button class="nav-item" data-section="ask">
+                ❓ <span>Ask AI</span>
+            </button>
+
+            <button class="nav-item" data-section="quiz">
+                🎯 <span>Generate Quiz</span>
+            </button>
+
+            <button class="nav-item" data-section="progress">
+                📊 <span>My Progress</span>
+            </button>
+
+            <button class="nav-item" data-section="leaderboard">
+                🏆 <span>Leaderboard</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="nav-item" id="themeBtn">
+                🌙 <span>Dark Mode</span>
+            </button>
+
+            <button class="nav-item" data-section="settings">
+                ⚙️ <span>Settings</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Learn smarter, not harder 🚀</p>
+            </div>
+
+            <div class="profile">
+                <div class="notification">🔔</div>
+                <div class="avatar">GS</div>
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section class="section active-section" id="dashboard">
+
+            <div class="welcome">
+                <div>
+                    <span class="small-label">WELCOME BACK 👋</span>
+                    <h2>Ready to learn something new?</h2>
+                    <p>Continue your learning journey with your AI Study Buddy.</p>
+                </div>
+
+                <button class="primary-btn" data-section="pdf">
+                    + Upload Notes
+                </button>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">📚</div>
+                    <div>
+                        <span>Documents</span>
+                        <strong id="documentCount">12</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">🎯</div>
+                    <div>
+                        <span>Quiz Score</span>
+                        <strong>82%</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">⏱️</div>
+                    <div>
+                        <span>Study Time</span>
+                        <strong>14.5h</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">🔥</div>
+                    <div>
+                        <span>Day Streak</span>
+                        <strong>7 Days</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Continue Learning</h3>
+                            <p>Pick up where you left off</p>
+                        </div>
+                        <span>→</span>
+                    </div>
+
+                    <div class="course">
+                        <div class="course-icon">💻</div>
+                        <div class="course-info">
+                            <h4>Data Structures & Algorithms</h4>
+                            <div class="progress-bar">
+                                <div style="width:72%"></div>
+                            </div>
+                            <small>72% completed</small>
+                        </div>
+                    </div>
+
+                    <div class="course">
+                        <div class="course-icon">📊</div>
+                        <div class="course-info">
+                            <h4>Data Science</h4>
+                            <div class="progress-bar">
+                                <div style="width:48%"></div>
+                            </div>
+                            <small>48% completed</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Today's Goal</h3>
+                            <p>Keep your streak alive 🔥</p>
+                        </div>
+                    </div>
+
+                    <div class="goal-circle">
+                        <div>
+                            <strong>75%</strong>
+                            <span>Complete</span>
+                        </div>
+                    </div>
+
+                    <p class="center-text">3 of 4 daily goals completed</p>
+
+                    <button class="primary-btn full" data-section="progress">
+                        View Progress
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PDF -->
+        <section class="section" id="pdf">
+
+            <div class="section-heading">
+                <h2>Upload Study Material 📄</h2>
+                <p>Upload your PDF notes and let AI understand them.</p>
+            </div>
+
+            <div class="upload-card" id="dropZone">
+
+                <div class="upload-icon">☁️</div>
+
+                <h3>Drop your PDF here</h3>
+
+                <p>or click below to browse your files</p>
+
+                <label class="primary-btn upload-btn">
+                    Choose PDF
+                    <input type="file" id="pdfInput" accept=".pdf">
+                </label>
+
+                <small>Maximum file size: 20 MB</small>
+
+                <div id="fileName"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+        <section class="section" id="summary">
+
+            <div class="section-heading">
+                <h2>AI Summary 🧠</h2>
+                <p>Turn long study material into easy-to-understand notes.</p>
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-top">
+                    <div>
+                        <span class="tag">DATA STRUCTURES</span>
+                        <h3>Stack & Queue</h3>
+                    </div>
+
+                    <button class="primary-btn" id="summaryBtn">
+                        ✨ Generate Summary
+                    </button>
+                </div>
+
+                <div id="summaryOutput" class="summary-output">
+                    <p>Your AI-generated summary will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ASK AI -->
+        <section class="section" id="ask">
+
+            <div class="section-heading">
+                <h2>Ask AI 🤖</h2>
+                <p>Ask anything about your uploaded study material.</p>
+            </div>
+
+            <div class="chat-card">
+
+                <div class="chat-messages" id="chatMessages">
+
+                    <div class="message ai">
+                        <div class="message-avatar">🤖</div>
+                        <div>
+                            <strong>StudyBuddy AI</strong>
+                            <p>Hi! Ask me anything about your studies.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="chat-input">
+                    <input
+                        type="text"
+                        id="questionInput"
+                        placeholder="Ask your question..."
+                    >
+
+                    <button id="askBtn">➤</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section class="section" id="quiz">
+
+            <div class="section-heading">
+                <h2>Quiz Challenge 🎯</h2>
+                <p>Test your knowledge and improve your score.</p>
+            </div>
+
+            <div class="quiz-card">
+
+                <div class="quiz-top">
+                    <span id="questionNumber">Question 1 of 5</span>
+                    <span id="quizScore">Score: 0</span>
+                </div>
+
+                <h3 id="question">
+                    Which data structure follows LIFO?
+                </h3>
+
+                <div class="options" id="options">
+
+                    <button data-answer="correct">Stack</button>
+                    <button data-answer="wrong">Queue</button>
+                    <button data-answer="wrong">Array</button>
+                    <button data-answer="wrong">Linked List</button>
+
+                </div>
+
+                <button class="primary-btn next-btn" id="nextBtn">
+                    Next Question →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+        <section class="section" id="progress">
+
+            <div class="section-heading">
+                <h2>My Progress 📊</h2>
+                <p>Track your learning performance.</p>
+            </div>
+
+            <div class="progress-grid">
+
+                <div class="card big-stat">
+                    <span>Overall Progress</span>
+                    <strong>78%</strong>
+
+                    <div class="large-progress">
+                        <div style="width:78%"></div>
+                    </div>
+                </div>
+
+                <div class="card big-stat">
+                    <span>Average Quiz Score</span>
+                    <strong>82%</strong>
+
+                    <div class="large-progress">
+                        <div style="width:82%"></div>
+                    </div>
+                </div>
+
+                <div class="card big-stat">
+                    <span>Study Streak</span>
+                    <strong>7 🔥</strong>
+
+                    <p>Keep going! Your best streak is 12 days.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEADERBOARD -->
+        <section class="section" id="leaderboard">
+
+            <div class="section-heading">
+                <h2>Leaderboard 🏆</h2>
+                <p>Compete with your friends.</p>
+            </div>
+
+            <div class="leaderboard card">
+
+                <div class="leader first">
+                    <span>🥇</span>
+                    <div class="leader-avatar">AK</div>
+                    <div>
+                        <strong>Aditya</strong>
+                        <small>2450 XP</small>
+                    </div>
+                </div>
+
+                <div class="leader">
+                    <span>🥈</span>
+                    <div class="leader-avatar">RS</div>
+                    <div>
+                        <strong>Rohit</strong>
+                        <small>2210 XP</small>
+                    </div>
+                </div>
+
+                <div class="leader">
+                    <span>🥉</span>
+                    <div class="leader-avatar">GS</div>
+                    <div>
+                        <strong>You</strong>
+                        <small>1980 XP</small>
+                    </div>
+                </div>
+
+                <div class="leader">
+                    <span>4</span>
+                    <div class="leader-avatar">PK</div>
+                    <div>
+                        <strong>Pratik</strong>
+                        <small>1840 XP</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SETTINGS -->
+        <section class="section" id="settings">
+
+            <div class="section-heading">
+                <h2>Settings ⚙️</h2>
+                <p>Customize your Study Buddy.</p>
+            </div>
+
+            <div class="card settings-card">
+
+                <div class="setting">
+                    <div>
+                        <strong>Notifications</strong>
+                        <p>Receive study reminders.</p>
+                    </div>
+
+                    <input type="checkbox" checked>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Daily Goal</strong>
+                        <p>Study for at least 60 minutes daily.</p>
+                    </div>
+
+                    <span class="tag">60 MIN</span>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>AI Difficulty</strong>
+                        <p>Choose how difficult your generated quizzes are.</p>
+                    </div>
+
+                    <select>
+                        <option>Easy</option>
+                        <option selected>Medium</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
